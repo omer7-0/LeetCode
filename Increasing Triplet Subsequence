@@ -1,0 +1,25 @@
+public class Solution {
+    public bool IncreasingTriplet(int[] nums) {
+
+      int n1 = int.MaxValue, n2 = int.MaxValue;
+
+foreach (int n in nums)
+{
+    if (n > n2)
+    {
+        return true; 
+    }
+    else if (n <= n1)
+    {
+        n1 = n; 
+    }
+    else
+    {
+        n2 = n; 
+    }
+}
+
+return false;
+        
+    }
+}
