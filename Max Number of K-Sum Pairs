@@ -1,0 +1,34 @@
+public class Solution {
+    public int MaxOperations(int[] nums, int k) {
+    Array.Sort(nums);
+    int left = 0, rigth = nums.Length-1;
+    int result = 0;
+ 
+
+    while(left<rigth)
+    {
+        int sum = nums[left] + nums[rigth];
+        if (sum == k)
+        {
+
+            result++;
+            left++;
+            rigth--;
+
+
+        }
+        else if (sum < k)
+        {
+            left++;
+        }
+        else
+            rigth--;
+
+        
+    }
+
+    return result;
+
+}
+        
+    }
