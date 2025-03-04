@@ -1,0 +1,50 @@
+public class Solution {
+    public int MaxVowels(string s, int k) {
+        int n = s.Length;
+char[] harfler = { 'a', 'e', 'i', 'o', 'u' };
+int count = 0, maxcount = 0; ;
+
+for (int i = 0; i < k; i++)
+{
+    for (int j = 0; j < harfler.Length; j++)
+    {
+        if (s[i] == harfler[j])
+        {
+            count++;
+            break; 
+        }
+    }
+}
+maxcount = count;
+for (int i = k; i < n; i++)
+{
+    
+    for (int j = 0; j < harfler.Length; j++)
+    {
+        if (s[i - k] == harfler[j])
+        {
+            count--;
+            break;
+        }
+    }
+
+
+    for (int j = 0; j < harfler.Length; j++)
+    {
+        if (s[i] == harfler[j])
+        {
+            count++;
+            break;
+        }
+    }
+
+    
+    if (count > maxcount)
+    {
+        maxcount = count;
+    }
+}
+
+return maxcount;
+    }
+}
