@@ -1,0 +1,17 @@
+public class Solution {
+    public int LargestAltitude(int[] gain) {
+         int result = 0, max = 0;
+ for(int i=0;i<gain.Length;i++)
+ {
+     result+= gain[i];
+
+    if(max<result)
+     {
+         max = result;
+     }
+
+ }
+
+ return max;
+    }
+}
