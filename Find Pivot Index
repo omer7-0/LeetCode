@@ -1,0 +1,17 @@
+public class Solution {
+    public int PivotIndex(int[] nums) {
+         int left = 0, rigth = nums.Sum();
+ for(int i=0;i<nums.Length; i++)
+ {
+     rigth -= nums[i];
+
+     if(left==rigth)
+     {
+         return i;
+     }
+     left += nums[i];
+ }
+
+ return -1;
+    }
+}
