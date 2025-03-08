@@ -1,0 +1,17 @@
+public class Solution {
+    public IList<IList<int>> FindDifference(int[] nums1, int[] nums2) {
+         HashSet<int> s1 = new HashSet<int>(nums1);
+ HashSet<int> s2 = new HashSet<int>(nums2);
+
+     
+ HashSet<int> d1 = new HashSet<int>(s1);
+ d1.ExceptWith(s2);
+
+ 
+ HashSet<int> d2 = new HashSet<int>(s2);
+ d2.ExceptWith(s1);
+
+  
+ return new List<IList<int>> { d1.ToList(), d2.ToList() };
+    }
+}
