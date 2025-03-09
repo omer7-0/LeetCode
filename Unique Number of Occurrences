@@ -1,0 +1,27 @@
+public class Solution {
+    public bool UniqueOccurrences(int[] arr) {
+          Dictionary<int, int> frequencyMap = new Dictionary<int, int>();
+  foreach (int num in arr)
+  {
+      if (frequencyMap.ContainsKey(num))
+      {
+          frequencyMap[num]++;
+      }
+      else
+      {
+          frequencyMap[num] = 1;
+      }
+  }
+  HashSet<int> frequencySet = new HashSet<int>();
+  foreach (var pair in frequencyMap)
+  {
+      if (frequencySet.Contains(pair.Value))
+      {
+          return false; 
+      }
+      frequencySet.Add(pair.Value);
+  }
+
+  return true;
+    }
+}
